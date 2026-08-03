@@ -18,4 +18,4 @@ A platform that retrains a model, decides whether to ship it, and deploys it wit
 
 ## Contact
 
-[maicymaritim@gmail.com](mailto:maicymaritim@gmail.com) · [LinkedIn](https://www.linkedin.com/in/maicy-maritim/) · [GitHub](https://github.com/MaicyMxtim)
+[Email](mailto:maicymaritim@gmail.com) · [LinkedIn](https://www.linkedin.com/in/maicy-maritim/) · [GitHub](https://github.com/MaicyMxtim)
