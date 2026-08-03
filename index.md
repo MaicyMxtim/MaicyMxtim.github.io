@@ -37,4 +37,7 @@ Both projects include their failures. Between them there are seven incident repo
 
 ## Contact
 
-[github.com/MaicyMxtim](https://github.com/MaicyMxtim)
+| | |
+|---|---|
+| Email | [maicymaritim@gmail.com](mailto:maicymaritim@gmail.com) |
+| GitHub | [github.com/MaicyMxtim](https://github.com/MaicyMxtim) |
