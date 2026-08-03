@@ -1,6 +1,6 @@
 # Maicy Maritim
 
-I am moving from data science into platform and infrastructure engineering. I build systems that run software in production, and I write up how they work and how they break.
+I am a data scientist with a recent interest in platforms and infrastructure, and I am working towards a transition into the field. Below are some of the projects I have built while learning, with more to come.
 
 ## Projects
 
