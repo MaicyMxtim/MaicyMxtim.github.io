@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ site.title }}</title>
+<meta name="description" content="{{ site.description }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfaf8; --surface:#ffffff; --ink:#16151a; --muted:#5d5b66;
+  --line:rgba(20,18,30,.10); --accent:#1f6f5c; --accent-soft:#e6f2ee; --glow:rgba(31,111,92,.16);
+}
+@media (prefers-color-scheme:dark){
+  :root{ --bg:#0f0f12; --surface:#17171b; --ink:#f2f1ee; --muted:#a3a1ad;
+    --line:rgba(255,255,255,.10); --accent:#5fd3b2; --accent-soft:#122b25; --glow:rgba(95,211,178,.18); }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Instrument Sans",system-ui,-apple-system,sans-serif;
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px 96px}
+header.hero{padding:96px 0 8px;position:relative}
+header.hero:before{content:"";position:absolute;top:34px;left:-120px;width:280px;height:280px;
+  background:radial-gradient(circle,var(--glow),transparent 68%);filter:blur(14px);z-index:0}
+h1{position:relative;z-index:1;font-size:clamp(2.4rem,7vw,3.4rem);line-height:1.05;
+  letter-spacing:-.03em;font-weight:600;margin:0 0 20px}
+h1:after{content:"";display:block;width:56px;height:4px;border-radius:3px;
+  background:var(--accent);margin-top:20px}
+header.hero+p, h1+p{position:relative;z-index:1;font-size:1.12rem;color:var(--muted);max-width:60ch;margin:0}
+h2{font-family:"JetBrains Mono",monospace;font-size:.76rem;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin:72px 0 20px;padding-bottom:10px;
+  border-bottom:1px solid var(--line)}
+h3{font-size:1.22rem;font-weight:600;letter-spacing:-.01em;margin:0 0 8px}
+h3+p{margin:0 0 14px;color:var(--muted)}
+h3~p:last-child{margin:0}
+/* project cards */
+h3{position:relative}
+h2+h3, h3{margin-top:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;
+  padding:24px 26px;margin-bottom:16px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.card:hover{transform:translateY(-3px);border-color:var(--accent);
+  box-shadow:0 14px 34px -18px var(--glow)}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
+a:hover{border-bottom-color:var(--accent)}
+.links a{font-family:"JetBrains Mono",monospace;font-size:.82rem;margin-right:18px;white-space:nowrap}
+footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
+  font-family:"JetBrains Mono",monospace;font-size:.82rem;color:var(--muted)}
+footer a{margin-right:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+{{ content }}
+</div>
+<script>
+document.querySelectorAll('h3').forEach(function(h){
+  var card = document.createElement('div');
+  card.className = 'card';
+  h.parentNode.insertBefore(card, h);
+  var n = h;
+  while (n && !(n.tagName === 'H2' || n.tagName === 'H3' && n !== h)) {
+    var next = n.nextElementSibling;
+    card.appendChild(n);
+    n = next;
+    if (n && (n.tagName === 'H3' || n.tagName === 'H2')) break;
+  }
+  var last = card.querySelector('p:last-child');
+  if (last && last.querySelector('a')) last.className = 'links';
+});
+</script>
+</body>
+</html>
