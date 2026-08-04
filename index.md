@@ -188,20 +188,6 @@ layout: default
 </ul>
 </div>
 
-<h2>Background</h2>
-
-<div class="reveal">
-<ul class="timeline">
-<li>Data science</li>
-<li class="arrow">→</li>
-<li>ML systems</li>
-<li class="arrow">→</li>
-<li>Platform engineering</li>
-<li class="arrow">→</li>
-<li class="now">Open to roles</li>
-</ul>
-</div>
-
 <h2>Skills</h2>
 
 <div class="skills">
