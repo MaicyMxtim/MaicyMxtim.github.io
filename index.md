@@ -25,7 +25,7 @@ layout: default
 
 <article class="project reveal">
 <p class="role">Live on AWS</p>
-<h3>Tamani Platform</h3>
+<h3><a href="https://maicymxtim.github.io/tamani-platform/">Tamani Platform</a></h3>
 <p>An internal developer platform running a real venue discovery backend on Kubernetes in AWS, deployed and reachable on the public internet.</p>
 <ul class="stack">
 <li>AWS</li><li>OpenTofu</li><li>k3s</li><li>Argo CD</li><li>Kyverno</li><li>NATS</li><li>Prometheus</li><li>Anthropic API</li>
@@ -122,7 +122,7 @@ layout: default
 
 <article class="project reveal">
 <p class="role">MLOps</p>
-<h3>Akili Platform</h3>
+<h3><a href="https://maicymxtim.github.io/akili/">Akili Platform</a></h3>
 <p>An MLOps platform that retrains a model, decides whether the new version should replace the live one, deploys it gradually and rolls back on its own. Its reliability was tested by causing real failures while traffic was running.</p>
 <ul class="stack">
 <li>k3d</li><li>Argo CD</li><li>Argo Workflows</li><li>MLflow</li><li>Feast</li><li>Argo Rollouts</li><li>Evidently</li><li>Kyverno</li>
