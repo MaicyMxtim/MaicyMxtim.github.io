@@ -5,12 +5,12 @@ layout: default
 <header class="hero">
 <p class="kicker">Maicy Maritim · Platform Engineering</p>
 <h1>Building cloud platforms that are secure, observable and easy to operate.</h1>
-<p class="sub">I am a data science graduate who moved into infrastructure because I enjoyed building the systems behind software more than the models themselves. I work on Kubernetes, cloud infrastructure, automation and developer tooling.</p>
+<p class="sub">I am a data science graduate transitioning into platform engineering. Through my own projects I have built and operated Kubernetes platforms on AWS, covering infrastructure as code, GitOps delivery, security automation and observability.</p>
 <ul class="chips">
 <li>AWS</li><li>Kubernetes</li><li>Terraform</li><li>GitOps</li><li>Python</li>
 </ul>
 <div class="cta">
-<a class="btn primary" href="#featured">View projects</a>
+<a class="btn primary" href="#projects">View projects</a>
 <a class="btn ghost" href="https://github.com/MaicyMxtim">GitHub</a>
 </div>
 <div class="stats">
@@ -21,7 +21,7 @@ layout: default
 </div>
 </header>
 
-<h2 id="featured">Featured project</h2>
+<h2 id="projects">Projects</h2>
 
 <article class="project reveal">
 <p class="role">Live on AWS</p>
@@ -118,10 +118,8 @@ layout: default
 </p>
 </article>
 
-<h2>Also built</h2>
-
 <article class="project reveal">
-<p class="role">MLOps</p>
+<p class="role">MLOps · runs on Kubernetes</p>
 <h3><a href="https://maicymxtim.github.io/akili/">Akili Platform</a></h3>
 <p>An MLOps platform that retrains a model, decides whether the new version should replace the live one, deploys it gradually and rolls back on its own. Its reliability was tested by causing real failures while traffic was running.</p>
 <ul class="stack">
