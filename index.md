@@ -5,7 +5,7 @@ layout: default
 <header class="hero">
 <p class="kicker">Maicy Maritim · Platform Engineering</p>
 <h1>Building cloud platforms that are secure, observable and easy to operate.</h1>
-<p class="sub">I am a platform and infrastructure enthusiast. Through my own projects, I have built and operated Kubernetes platforms on AWS, covering infrastructure as code, GitOps delivery, security automation and observability.</p>
+<p class="sub">After developing an interest in platform engineering, I began exploring cloud infrastructure, automation, and distributed systems through personal projects. Along the way, I built and operated Kubernetes platforms on AWS, gaining hands-on experience with infrastructure as code, GitOps delivery, security automation, and observability.</p>
 <ul class="chips">
 <li>AWS</li><li>Kubernetes</li><li>Terraform</li><li>GitOps</li><li>Python</li>
 </ul>
