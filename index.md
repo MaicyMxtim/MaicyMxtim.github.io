@@ -13,12 +13,6 @@ layout: default
 <a class="btn primary" href="#projects">View projects</a>
 <a class="btn ghost" href="https://github.com/MaicyMxtim">GitHub</a>
 </div>
-<div class="stats">
-<div class="stat reveal"><span class="n">95&nbsp;ms</span><span class="l">p95 latency in production, against a 400&nbsp;ms target</span></div>
-<div class="stat reveal"><span class="n">100%</span><span class="l">of deployments delivered through GitOps</span></div>
-<div class="stat reveal"><span class="n">57%</span><span class="l">projected AI spend saving from measured model tiering</span></div>
-<div class="stat reveal"><span class="n">449/450</span><span class="l">requests answered while five failures were caused on purpose</span></div>
-</div>
 </header>
 
 <h2 id="projects">Projects</h2>
