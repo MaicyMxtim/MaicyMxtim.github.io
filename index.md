@@ -180,7 +180,6 @@ layout: default
 <h2>Engineering philosophy</h2>
 
 <div class="reveal">
-<p>Each of my projects starts from a practical engineering question and builds a working answer to it.</p>
 <ul class="questions">
 <li>How can deployment be made safer and more repeatable?</li>
 <li>How can a platform give developers self-service without losing control?</li>
@@ -192,7 +191,6 @@ layout: default
 <h2>Background</h2>
 
 <div class="reveal">
-<p>I studied data science and started out on the modelling side. While working on those projects I found that I enjoyed the infrastructure more than the models, so I changed direction. Since then I have built and operated two platforms end to end, from infrastructure as code and cluster setup through to monitoring, incident reports and cost analysis.</p>
 <ul class="timeline">
 <li>Data science</li>
 <li class="arrow">→</li>
