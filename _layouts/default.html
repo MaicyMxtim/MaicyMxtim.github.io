@@ -12,43 +12,131 @@
 :root{
   --bg:#fbfaf8; --surface:#ffffff; --ink:#16151a; --muted:#5d5b66;
   --line:rgba(20,18,30,.10); --accent:#1f6f5c; --accent-soft:#e6f2ee; --glow:rgba(31,111,92,.16);
+  --box:#f4f3f0;
 }
 @media (prefers-color-scheme:dark){
   :root{ --bg:#0f0f12; --surface:#17171b; --ink:#f2f1ee; --muted:#a3a1ad;
-    --line:rgba(255,255,255,.10); --accent:#5fd3b2; --accent-soft:#122b25; --glow:rgba(95,211,178,.18); }
+    --line:rgba(255,255,255,.10); --accent:#5fd3b2; --accent-soft:#122b25; --glow:rgba(95,211,178,.18);
+    --box:#1d1d22; }
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);
   font-family:"Instrument Sans",system-ui,-apple-system,sans-serif;
   font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
-.wrap{max-width:720px;margin:0 auto;padding:0 24px 96px}
-header.hero{padding:96px 0 8px;position:relative}
-header.hero:before{content:"";position:absolute;top:34px;left:-120px;width:280px;height:280px;
-  background:radial-gradient(circle,var(--glow),transparent 68%);filter:blur(14px);z-index:0}
-h1{position:relative;z-index:1;font-size:clamp(2.4rem,7vw,3.4rem);line-height:1.05;
-  letter-spacing:-.03em;font-weight:600;margin:0 0 20px}
-h1:after{content:"";display:block;width:56px;height:4px;border-radius:3px;
-  background:var(--accent);margin-top:20px}
-header.hero+p, h1+p{position:relative;z-index:1;font-size:1.12rem;color:var(--muted);max-width:60ch;margin:0}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px 72px}
+.mono{font-family:"JetBrains Mono",monospace}
+
+/* hero */
+.hero{padding:88px 0 24px;position:relative}
+.hero:before{content:"";position:absolute;top:34px;left:-140px;width:320px;height:320px;
+  background:radial-gradient(circle,var(--glow),transparent 68%);filter:blur(14px);z-index:0;pointer-events:none}
+.kicker{font-family:"JetBrains Mono",monospace;font-size:.78rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 18px}
+.kicker:after{content:"▌";margin-left:6px;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+h1{position:relative;z-index:1;font-size:clamp(2.1rem,6vw,3.1rem);line-height:1.12;
+  letter-spacing:-.03em;font-weight:600;margin:0 0 22px;max-width:21ch}
+.hero .sub{font-size:1.1rem;color:var(--muted);max-width:62ch;margin:0 0 22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px;padding:0;list-style:none}
+.chips li{font-family:"JetBrains Mono",monospace;font-size:.76rem;letter-spacing:.04em;
+  padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);
+  background:var(--surface)}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:.85rem;
+  padding:11px 20px;border-radius:9px;text-decoration:none;border:1px solid var(--accent);
+  transition:transform .15s ease,box-shadow .15s ease,background .15s ease}
+.btn.primary{background:var(--accent);color:var(--bg)}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px -12px var(--glow)}
+.btn.ghost{color:var(--accent)}
+.btn.ghost:hover{background:var(--accent-soft);transform:translateY(-2px)}
+
+/* section headings */
 h2{font-family:"JetBrains Mono",monospace;font-size:.76rem;font-weight:500;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--muted);margin:72px 0 20px;padding-bottom:10px;
+  text-transform:uppercase;color:var(--muted);margin:72px 0 22px;padding-bottom:10px;
   border-bottom:1px solid var(--line)}
-h3{font-size:1.22rem;font-weight:600;letter-spacing:-.01em;margin:0 0 8px}
-h3+p{margin:0 0 14px;color:var(--muted)}
-h3~p:last-child{margin:0}
-/* project cards */
-h3{position:relative}
-h2+h3, h3{margin-top:0}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;
-  padding:24px 26px;margin-bottom:16px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
-.card:hover{transform:translateY(-3px);border-color:var(--accent);
-  box-shadow:0 14px 34px -18px var(--glow)}
+h3{font-size:1.35rem;font-weight:600;letter-spacing:-.01em;margin:0 0 6px}
+p{margin:0 0 16px}
 a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
 a:hover{border-bottom-color:var(--accent)}
-.links a{font-family:"JetBrains Mono",monospace;font-size:.82rem;margin-right:18px;white-space:nowrap}
-footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
-  font-family:"JetBrains Mono",monospace;font-size:.82rem;color:var(--muted)}
-footer a{margin-right:18px}
+
+/* stat tiles */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(170px,100%),1fr));gap:14px;margin:34px 0 0}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.stat .n{font-family:"JetBrains Mono",monospace;font-size:1.6rem;font-weight:500;color:var(--accent);
+  letter-spacing:-.02em;display:block;margin-bottom:4px}
+.stat .l{font-size:.86rem;color:var(--muted);line-height:1.45;display:block}
+
+/* project cards */
+.project{background:var(--surface);border:1px solid var(--line);border-radius:16px;
+  padding:30px 32px;margin-bottom:22px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.project:hover{transform:translateY(-3px);border-color:var(--accent);
+  box-shadow:0 16px 38px -18px var(--glow)}
+.project .role{font-family:"JetBrains Mono",monospace;font-size:.74rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+.project .stack{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 20px;padding:0;list-style:none}
+.project .stack li{font-family:"JetBrains Mono",monospace;font-size:.72rem;
+  padding:4px 10px;border-radius:6px;background:var(--accent-soft);color:var(--accent)}
+.project .question{font-size:1.06rem;border-left:3px solid var(--accent);padding:2px 0 2px 16px;
+  color:var(--ink);margin:20px 0}
+.diagram{margin:22px 0;overflow-x:auto;background:var(--box);border:1px solid var(--line);
+  border-radius:12px;padding:18px}
+.diagram svg{display:block;min-width:640px;width:100%;height:auto}
+.badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(215px,100%),1fr));gap:8px 18px;
+  margin:20px 0;padding:0;list-style:none}
+.badges li{font-family:"JetBrains Mono",monospace;font-size:.82rem;color:var(--muted)}
+.badges li:before{content:"✓";color:var(--accent);margin-right:9px;font-weight:500}
+.links{margin-top:22px}
+.links a{font-family:"JetBrains Mono",monospace;font-size:.84rem;margin-right:20px;white-space:nowrap}
+
+/* philosophy */
+.questions{list-style:none;margin:18px 0 0;padding:0}
+.questions li{padding:12px 0 12px 20px;border-left:2px solid var(--line);margin-bottom:6px;
+  transition:border-color .2s}
+.questions li:hover{border-left-color:var(--accent)}
+
+/* timeline */
+.timeline{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:22px 0 0;padding:0;list-style:none;
+  font-family:"JetBrains Mono",monospace;font-size:.84rem}
+.timeline li{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:9px 15px}
+.timeline li.now{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.timeline .arrow{border:0;background:none;color:var(--muted);padding:0}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:14px;margin-top:8px}
+.skill-group{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
+.skill-group h4{font-family:"JetBrains Mono",monospace;font-size:.72rem;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 8px}
+.skill-group p{font-size:.92rem;color:var(--muted);margin:0}
+
+/* footer */
+footer{margin-top:88px;padding-top:28px;border-top:1px solid var(--line)}
+footer .status{font-size:1.02rem;margin:0 0 14px}
+footer .status:before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;
+  background:var(--accent);margin-right:10px;animation:pulse 2.4s ease infinite}
+@keyframes pulse{50%{opacity:.35}}
+footer nav a{font-family:"JetBrains Mono",monospace;font-size:.84rem;margin-right:20px}
+
+/* diagram svg */
+.dg-box{fill:var(--surface);stroke:var(--line);stroke-width:1}
+.dg-boxa{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1}
+.dg-zone{fill:none;stroke:var(--muted);stroke-width:1;stroke-dasharray:5 4;opacity:.6}
+.dg-t{font-family:"JetBrains Mono",monospace;font-size:11.5px;fill:var(--ink)}
+.dg-s{font-family:"JetBrains Mono",monospace;font-size:10px;fill:var(--muted)}
+.dg-a{font-family:"JetBrains Mono",monospace;font-size:11px;fill:var(--accent)}
+.dg-line{stroke:var(--muted);stroke-width:1.2;fill:none}
+.dg-arr{fill:var(--muted)}
+
+@media (max-width:560px){ .project{padding:22px 18px} .hero{padding-top:64px} }
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .kicker:after,footer .status:before{animation:none}
+  html{scroll-behavior:auto}
+}
 </style>
 </head>
 <body>
@@ -56,20 +144,15 @@ footer a{margin-right:18px}
 {{ content }}
 </div>
 <script>
-document.querySelectorAll('h3').forEach(function(h){
-  var card = document.createElement('div');
-  card.className = 'card';
-  h.parentNode.insertBefore(card, h);
-  var n = h;
-  while (n && !(n.tagName === 'H2' || n.tagName === 'H3' && n !== h)) {
-    var next = n.nextElementSibling;
-    card.appendChild(n);
-    n = next;
-    if (n && (n.tagName === 'H3' || n.tagName === 'H2')) break;
-  }
-  var last = card.querySelector('p:last-child');
-  if (last && last.querySelector('a')) last.className = 'links';
-});
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>
