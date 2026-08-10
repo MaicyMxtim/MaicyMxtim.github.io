@@ -18,9 +18,9 @@ layout: default
 <h2 id="projects">Projects</h2>
 
 <article class="project reveal">
-<p class="role">Live on AWS</p>
+<p class="role">Internal developer platform · AWS</p>
 <h3><a href="https://maicymxtim.github.io/tamani-platform/">Tamani Platform</a></h3>
-<p>An internal developer platform running a real venue discovery backend on Kubernetes in AWS, deployed and reachable on the public internet.</p>
+<p>An internal developer platform running a real venue discovery backend on Kubernetes in AWS. It ran live on the public internet during the build, and was decommissioned to keep running costs at zero.</p>
 <ul class="stack">
 <li>AWS</li><li>OpenTofu</li><li>k3s</li><li>Argo CD</li><li>Kyverno</li><li>NATS</li><li>Prometheus</li><li>Anthropic API</li>
 </ul>
@@ -107,7 +107,6 @@ layout: default
 </ul>
 <p class="links">
 <a href="https://maicymxtim.github.io/tamani-platform/">Read the case study →</a>
-<a href="https://platform.waypear.com/">Live site</a>
 <a href="https://github.com/MaicyMxtim/tamani-platform">Code</a>
 </p>
 </article>
